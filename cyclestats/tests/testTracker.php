@@ -1,20 +1,25 @@
 <?php
 require_once "../lib/Tracker.class.php";
+require_once "PHPUnit/Framework.php";
 
-class testTracker
+
+class testTracker extends PHPUnit_Framework_TestCase
 {
-	private $myTracker;
-	
 	public function setUp()
 	{
-		$myTracker = new Tracker();
+	
 	}
 	
-	
+	public function testReturnInt()
+	{
+		$myTracker = new Tracker();
+		
+		$this->assertEquals(32, $myTracker->returnInt());
+	}
 }
 
 $myTest = new testTracker();
 $myTest->setUp();
-
+$myTest->testReturnInt();
 
 ?>
