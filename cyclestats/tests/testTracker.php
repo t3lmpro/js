@@ -5,29 +5,25 @@ require_once "PHPUnit/Framework.php";
 
 class testTracker extends PHPUnit_Framework_TestCase
 {
+	private $myTracker;
+	
 	public function setUp()
 	{
-		//$this->$myTracker = new Tracker();
+		$this->myTracker = new Tracker();
 	}
 	
 	public function testAddTrip()
 	{
-		$myTracker = new Tracker();
 		$myTrip = new Trip();
-		$myTracker->addTrip($myTrip);
-		$this->assertEquals(1, $myTracker->getNoTrips());
+		$this->myTracker->addTrip($myTrip);
+		$this->assertEquals(1, $this->myTracker->getNoTrips());
 	}
 	
 	public function testGetTrips()
 	{
-		$myTracker = new Tracker();
 		$newTrip = new Trip();
-		$myTracker->addTrip($newTrip);
+		$this->myTracker->addTrip($newTrip);
 	}
 }
-
-$myTest = new testTracker();
-$myTest->testAddTrip();
-$myTest->testGetTrips();
 
 ?>
