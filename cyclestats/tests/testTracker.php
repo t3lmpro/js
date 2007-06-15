@@ -26,4 +26,9 @@ class testTracker extends PHPUnit_Framework_TestCase
 	}
 }
 
+$myTest = new testTracker();
+$myTest->setUp();
+$myTest->testAddTrip();
+$myTest->testGetTrips();
+
 ?>
