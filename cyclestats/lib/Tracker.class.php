@@ -1,12 +1,25 @@
 <?php
+require_once "Trip.class.php";
 
 class Tracker
 {
-	private $stats;
+	private $trips;
 	
-	public function returnInt()
+	// Adds a new Trip record to the stats
+	public function addTrip(Trip $record)
 	{
-		return 32;
+		$this->trips[] = $record;
+	}
+	
+	// Returns the number of trips
+	public function getNoTrips()
+	{
+		return sizeof($this->trips);
+	}
+	
+	public function getTrips()
+	{
+		return $this->trips;
 	}
 }
 

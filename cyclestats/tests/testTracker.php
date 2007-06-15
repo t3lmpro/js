@@ -7,19 +7,27 @@ class testTracker extends PHPUnit_Framework_TestCase
 {
 	public function setUp()
 	{
-	
+		//$this->$myTracker = new Tracker();
 	}
 	
-	public function testReturnInt()
+	public function testAddTrip()
 	{
 		$myTracker = new Tracker();
-		
-		$this->assertEquals(32, $myTracker->returnInt());
+		$myTrip = new Trip();
+		$myTracker->addTrip($myTrip);
+		$this->assertEquals(1, $myTracker->getNoTrips());
+	}
+	
+	public function testGetTrips()
+	{
+		$myTracker = new Tracker();
+		$newTrip = new Trip();
+		$myTracker->addTrip($newTrip);
 	}
 }
 
 $myTest = new testTracker();
-$myTest->setUp();
-$myTest->testReturnInt();
+$myTest->testAddTrip();
+$myTest->testGetTrips();
 
 ?>
