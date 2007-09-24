@@ -1,8 +1,10 @@
 <?php
-
-// Class that represents a single Trip record
+/** Class that represents a single Trip record
+ *
+*/
 class Trip
 {
+	private $tripdate;
 	private $distance = 0;
 	private $time = 0;
 	private $avgSpeed = 0;
@@ -10,6 +12,7 @@ class Trip
 	private $calories = 0;
 	private $odometer = 0;
 	private $unit = "km";
+	private $bike;
 	
 	public function setDistance($value = 0)
 	{
