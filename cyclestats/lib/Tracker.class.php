@@ -1,13 +1,17 @@
 <?php
+require_once "DBI.class.php";
 require_once "Trip.class.php";
 
 class Tracker
 {
 	private $trips;
+	private $dbi;
 	
 	// Adds a new Trip record to the stats
-	public function addTrip(Trip $record)
+	public static function addTrip(Trip $record)
 	{
+		$dbi = new DBI();
+		
 		$this->trips[] = $record;
 	}
 	
@@ -20,6 +24,11 @@ class Tracker
 	public function getTrips()
 	{
 		return $this->trips;
+	}
+	
+	public function getTrips($tripId)
+	{
+		
 	}
 }
 

@@ -6,14 +6,14 @@
 
 <h1>Add New Trip</h1>
 <br>
-<form name="frmNewTrip" action="add_trip.php">
+<form name="frmNewTrip" action="addTrip.php" method="POST">
 <table>
   <tr>
     <td>unit</td>
     <td>
 		<select name="unit">
-		  <option value="metric">metric</option>
-		  <option value="imperial">imperial</option>
+		  <option value="m">metric</option>
+		  <option value="i">imperial</option>
 		</select>
 	</td>
   </tr>
@@ -28,17 +28,17 @@
   	<td>
   	  <select name="hours">
   	  	<?php for($i = 0; $i < 24; $i++){ ?>
-  	    <option value="<?=$i?>" />
+  	    <option value="<?php echo $i; ?>"><?php printf("%02d",$i); ?></option>
   	    <?php } ?>
   	  </select>
   	  <select name="minutes">
   	  	<?php for($i = 0; $i < 60; $i++){ ?>
-  	    <option value="<?=$i?>" />
+  	    <option value="<?php echo $i; ?>"><?php printf("%02d",$i); ?></option>
   	    <?php } ?>
   	  </select>
   	  <select name="seconds">
   	  	<?php for($i = 0; $i < 60; $i++){ ?>
-  	    <option value="<?=$i?>" />
+  	    <option value="<?php echo $i; ?>"><?php printf("%02d",$i); ?></option>
   	    <?php } ?>
   	  </select>
   	</td>
@@ -65,6 +65,13 @@
   	<td>Odometer</td>
   	<td>
   	  <input type="text" name="odometer">
+  	</td>
+  </tr>
+  <tr>
+  	<td></td>
+  	<td>
+  	  <input type="submit" name="btn_submit" value="Add">
+  	  <input type="reset" value="Reset">
   	</td>
   </tr>
 </table>
