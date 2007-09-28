@@ -4,6 +4,7 @@ require_once "Trip.class.php";
 
 class Tracker
 {
+	/** Test */
 	private $trips;
 	private $dbi;
 	

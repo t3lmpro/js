@@ -1,4 +1,5 @@
 <?php
+require_once "Bike.class.php";
 /**
  * This file contains Trip class
  * @author Polad Mirzayev <polad.mirzayev@gmail.com>
