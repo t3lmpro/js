@@ -1,25 +1,16 @@
 <?php
 require_once "lib/Trip.class.php";
+require_once "lib/vcomp.datetime.class.php";
 
-/*
-$mySQL = "INSERT INTO trip (trip_duration, trip_distance, trip_avg_speed, trip_max_speed, trip_odometer, trip_calories, trip_unit) VALUES (" .
-		 ($_POST["hours"] * 3600 + $_POST["minutes"] * 60 + $_POST["seconds"]) . ", " .
-		 $_POST["distance"] . ", " .
-		 $_POST["avg_speed"] . ", " .
-		 $_POST["max_speed"] . ", " .
-		 $_POST["odometer"] . ", " .
-		 $_POST["calories"] . ", '" .
-		 $_POST["unit"] . "')";
-*/
+$trip_date = new VCOMP_DateTime("trip_date");
 
 $newTrip = new Trip();
+$newTrip->setTripDate($trip_date->getTimestamp());
 $newTrip->setDuration($_POST["hours"] * 3600 + $_POST["minutes"] * 60 + $_POST["seconds"]);
-$newTrip->g
-
-$affected =& $myDB->exec($mySQL);
-
-if (PEAR::isError($affected)) {
-    die($affected->getMessage());
-}
+$newTrip->setDistance($_POST["distance"]);
+$newTrip->setAvgSpeed($_POST["avg_speed"]);
+$newTrip->setMaxSpeed($_POST["max_speed"]);
+$newTrip->setOdometer($_POST["odometer"]);
+$newTrip->setCalories($_POST["calories"]);
 
 ?>

@@ -1,3 +1,9 @@
+<?php
+require_once "lib/vcomp.datetime.class.php";
+
+$trip_date = new VCOMP_DateTime("trip_date");
+$trip_date->isMonthAbbreviated(true);
+?>
 <html>
 <head>
 <title>Add new Trip</title>
@@ -16,6 +22,12 @@
 		  <option value="i">imperial</option>
 		</select>
 	</td>
+  </tr>
+  <tr>
+  	<td>Trip date/time</td>
+  	<td>
+  	  <?php echo $trip_date->draw(1,1,1,1,1); ?>
+  	</td>
   </tr>
   <tr>
   	<td>Trip distance</td>
